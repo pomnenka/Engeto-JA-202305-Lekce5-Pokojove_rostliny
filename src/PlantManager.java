@@ -22,7 +22,7 @@ public class PlantManager {
                 items = line.split(delimiter);
                 if (items.length != 5)
                     throw new PlantException("Špatný počet položek na řádku: " + lineNumber + ": " + line);
-                plantList.add(new Plant(items[0], items[1], LocalDate.parse(items[3]), LocalDate.parse(items[4]), Integer.valueOf(items[2])));
+                plantList.add(new Plant(items[0], items[1], LocalDate.parse(items[4]), LocalDate.parse(items[3]), Integer.valueOf(items[2])));
                 lineNumber++;
             }
         } catch (FileNotFoundException e) {

@@ -27,7 +27,7 @@ public class Main {
 //        přidám dvě květiny
         try {
             plantManager.add(new Plant("Tulipán", "různobarevné", LocalDate.parse("2023-03-12"), LocalDate.parse("2023-06-12"), 2));
-            plantManager.add(new Plant("Orchidea", "dílá", LocalDate.parse("2023-04-21"), LocalDate.parse("2023-06-08"), 5));
+            plantManager.add(new Plant("Orchidea", "bílá", LocalDate.parse("2023-04-21"), LocalDate.parse("2023-06-08"), 5));
         } catch (PlantException e) {
             System.err.println(e);
         }
@@ -39,6 +39,14 @@ public class Main {
             i++;
         }
 
+// smazání druhé květiny
+        plantManager.remove(plantManager.get(1));
 
+        System.out.println("\nTestovací výpis po smazání druhé květiny:");
+        i = 0;
+        while(i < plantManager.size()) {
+            System.out.println(plantManager.get(i));  // testovací výpis
+            i++;
+        }
     }
 }
