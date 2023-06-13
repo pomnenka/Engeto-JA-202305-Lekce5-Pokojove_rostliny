@@ -9,7 +9,7 @@ public class Plant {
 
     public Plant(String name, String notes, LocalDate plantedDate, LocalDate wateringDate, int wateringFrequency) throws PlantException {
         if (wateringFrequency <= 0) { throw new PlantException("Frekvence zálivky musí být větší než nula.");}
-        if (wateringDate.isAfter(plantedDate)) { throw new PlantException("Datum zálivky musí být pozdější než datum výsadby.");}
+        if (wateringDate.isBefore(plantedDate)) { throw new PlantException("Datum zálivky musí být pozdější než datum výsadby.");}
         this.name = name;
         this.notes = notes;
         this.plantedDate = plantedDate;
